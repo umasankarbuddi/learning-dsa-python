@@ -79,7 +79,7 @@ class LinkedList:
             self.tail = None
         return temp
 
-    def get(self, index):
+    def get(self, index): # O(n)
         """Return the node at index, or None when the index is invalid."""
         if index < 0 or index >= self.length:
             return None
@@ -88,7 +88,7 @@ class LinkedList:
             temp = temp.next
         return temp
 
-    def set(self, value, index):
+    def set(self, value, index): # O(n)
         """Update a node's value and return True, or False for an invalid index."""
         if index < 0 or index >= self.length:
             return False
@@ -96,7 +96,7 @@ class LinkedList:
         node.value = value
         return True
 
-    def insert(self, value, index):
+    def insert(self, value, index): # O(n)
         """Insert a value at index and return True, or False for an invalid index."""
         if index < 0 or index > self.length:
             return False
@@ -114,7 +114,7 @@ class LinkedList:
         self.length += 1
         return True
 
-    def remove(self, index):
+    def remove(self, index): # O(n)
         """Remove and return the node at index, or None for an invalid index."""
         if index < 0 or index >= self.length:
             return None
