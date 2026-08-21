@@ -21,7 +21,7 @@ class DoublyLinkedList:
         print(f"Doubly Linked List:  {', '.join(values)}")
 
 
-    def append(self, value):
+    def append(self, value): # O(1)
         new_node = Node(value)
         new_node.prev = self.tail
         self.tail.next = new_node
@@ -29,7 +29,7 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    def prepend(self, value):
+    def prepend(self, value): # O(1)
         new_node = Node(value)
         new_node.next = self.head
         self.head.prev = new_node
@@ -37,7 +37,7 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    def pop(self):
+    def pop(self): # O(1)
         if self.length == 0:
             return None
         temp = self.tail
@@ -51,7 +51,7 @@ class DoublyLinkedList:
             self.tail = None
         return temp
 
-    def pop_first(self):
+    def pop_first(self): # O(1)
         if self.length == 0:
             return None
         temp = self.head
@@ -65,18 +65,18 @@ class DoublyLinkedList:
             self.tail = None
         return temp
 
-    def get_value(self, index):
+    def get_value(self, index): # O(n)
         temp = self.head
         for _ in range(index):
             temp = temp.next
         return temp
 
-    def set_value(self, value, index):
+    def set_value(self, value, index): # O(n)
         temp = self.get_value(index)
         temp.value = value
         return True
 
-    def insert_value(self, value, index):
+    def insert_value(self, value, index): # O(n)
         if index < 0 or index > self.length:
             return False
         if index == 0:
@@ -92,7 +92,7 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-    def remove_value(self, index):
+    def remove_value(self, index): # O(n)
         if index < 0 or index > self.length:
             return None
 
