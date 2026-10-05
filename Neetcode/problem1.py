@@ -10,19 +10,19 @@
 # Optimal Approach
 # Time Complexity -> O(n)
 # Space Complexity -> O(n)
-def determineUniquenessOfArray(array):
-    elements_set = set()
+
+def containsDuplicateElements(array):
+    elements_seen = set()
     for i in array:
-        if i in elements_set:
+        if i in elements_seen:
             return True
-        elements_set.add(i)
+        elements_seen.add(i)
     return False
 
 array1 = [0, 2, 1, 5, 6, 2]
 array2 = [0, 2, 1, 5, 6, 7, 10, 16]
-
-containsRepetitiveElements = determineUniquenessOfArray(array2)
-if containsRepetitiveElements:
+ 
+if containsDuplicateElements(array2):
     print("Array contains repetative elements")
 else:
     print("Array contains distinct elements")
